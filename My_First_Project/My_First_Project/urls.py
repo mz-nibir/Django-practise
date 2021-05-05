@@ -1,12 +1,12 @@
 
 from django.contrib import admin
 from django.urls import path
-from first_app import views
+# add urls
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact'),
+    path('first_app/', include('first_app.urls')),
+
 
 ]
