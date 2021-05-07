@@ -4,7 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('<h1>I am from first app</h1>')
-
-def contact(request):
-    return HttpResponse("contact page")
+    diction={'text_1': 'i am from views.py page'}
+    return render(request,'first_app/index.html',context= diction)
