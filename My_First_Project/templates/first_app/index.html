@@ -1,21 +1,29 @@
-<<!DOCTYPE html>
-{%load static%}
+<!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static "css/mystyle.css" %} ">
-    <title></title>
+    <title>Musician List</title>
   </head>
   <body>
+    <h1>{{text_1}}</h1>
 
-    <h1> this is a Html file from template </h1>
-    <h1>i am being from view.py of first app  </h1>
+    <table border="1">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Instrument</th>
 
-    {{ text_1}}
-    <br> <br>
-    <img src="{% static "image/sunflower.jpg" %}">
-
-
+      </tr>
+      {% for row in musician %}
+      <tr>
+        <td>{{row.first_name}}</td>
+        <td>{{row.last_name}}</td>
+        <td>{{row.instrument}}</td>
+      </tr>
+      {% endfor%}
+    </table>
 
   </body>
 </html>
