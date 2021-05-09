@@ -8,3 +8,7 @@ def index(request):
     musician_list= Musician.objects.order_by('first_name')
     diction={'text_1': 'The list of Musician','musician': musician_list}
     return render(request,'first_app/index.html',context= diction)
+
+def form(request):
+    diction={}
+    return render(request,'first_app/form.html',context= diction)
