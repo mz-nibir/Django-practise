@@ -6,12 +6,9 @@
   </head>
   <body>
     <h3>This is a form</h3>
-    <form  action="" method="post">
+    <!-- <form  action="" method="post">
 
-      <!-- <label for="test_field">This is for testing</label>
-      <input type="text" name="test_field" value="Nibir" required>
 
-      <input type="submit" name="" value="submit"> -->
 
       <label for="user_name">Full Name</label>
       <input type="text" name="user_name" value="Nibir" required>
@@ -19,14 +16,16 @@
       <label for="email">Email</label>
       <input type="email" name="email" value="" required>
 
-      <input type="submit" name="" value="submit">
+      <input type="submit" name="" value="submit"> -->
 
       <hr>
 
       <h3>{{heading_1}}</h3>
 
       <form class="" action="" method="post">
-        {{text_form}}
+        {{text_form.as_p}}
+
+        <input type="button" name="" value="submit">
 
       </form>
 
