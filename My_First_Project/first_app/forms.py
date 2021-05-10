@@ -1,4 +1,4 @@
 from django import forms
 
 class user_form (forms.Form):
-    field = forms.BooleanField(required=False)
+    field = forms.CharField(max_length=15,min_length=5)
