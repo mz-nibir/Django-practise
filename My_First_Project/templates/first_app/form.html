@@ -5,32 +5,31 @@
     <title>form</title>
   </head>
   <body>
-    <h3>This is a form</h3>
-    <!-- <form  action="" method="post">
 
+    <h3>{{heading_1}}</h3>
+    <form  action="" method="POST">
 
+      {{text_form.as_p}}
 
-      <label for="user_name">Full Name</label>
-      <input type="text" name="user_name" value="Nibir" required>
+      {% csrf_token %}
 
-      <label for="email">Email</label>
-      <input type="email" name="email" value="" required>
-
-      <input type="submit" name="" value="submit"> -->
-
-      <hr>
-
-      <h3>{{heading_1}}</h3>
-
-      <form class="" action="" method="post">
-        {{text_form.as_p}}
-
-        <input type="button" name="" value="submit">
-
-      </form>
-
+      <input type="submit" name="" value="submit">
 
     </form>
+
+    <hr>
+
+    {% if form_submitted %}
+
+      <p>{{user_name}}</p>
+      <p>{{user_dob}}</p>
+      <p>{{user_email}}</p>
+
+    {% endif %}
+
+
+
+
 
   </body>
 </html>
