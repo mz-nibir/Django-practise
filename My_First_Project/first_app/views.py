@@ -16,6 +16,7 @@ def form(request):
 
     if request.method == 'POST':
         new_form = forms.user_form(request.POST)
+        diction.update({'text_form': new_form})
 
         if new_form.is_valid():
             user_name = new_form.cleaned_data['field']
@@ -28,4 +29,4 @@ def form(request):
             diction.update({'form_submitted': 'yes'})
 
 
-    return render(request,'first_app/form.html',context= diction)
+    return render(request,'first_app/form.html',context=diction)
