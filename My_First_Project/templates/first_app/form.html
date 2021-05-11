@@ -9,7 +9,7 @@
     <h3>{{heading_1}}</h3>
     <form  action="" method="POST">
 
-      {{text_form.as_p}}
+      {{test_form.as_p}}
 
       {% csrf_token %}
 
@@ -17,15 +17,7 @@
 
     </form>
 
-    <hr>
 
-    {% if form_submitted %}
-
-      <p>{{user_name}}</p>
-      <!-- <p>{{user_dob}}</p>
-      <p>{{user_email}}</p> -->
-
-    {% endif %}
 
 
 
