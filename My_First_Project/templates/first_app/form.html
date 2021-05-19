@@ -1,29 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>form</title>
-  </head>
-  <body>
+{% extends "first_app/base.html" %}
 
-    <a href="{% url 'First_app:index'%}">Back</a>
+{% block body_block%}
 
-    <h3>{{heading_1}}</h3>
-    <form  action="" method="POST">
+<h1>I am Form Page</h1>
 
-      {{test_form.as_p}}
-
-      {% csrf_token %}
-
-      <input type="submit" name="" value="submit">
-
-    </form>
-
-
-
-
-
-
-
-  </body>
-</html>
+{% endblock %}
