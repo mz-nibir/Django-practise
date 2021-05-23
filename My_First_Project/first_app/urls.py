@@ -6,5 +6,7 @@ app_name= "First_app"
 
 urlpatterns= [
     path('',views.index,name='index'),
-    path('form/',views.form,name='form'),
+    path('add_albam/',views.albam_form,name='albam_form'),
+    path('add_musician/',views.musician_form,name='musician_form'),
+
 ]

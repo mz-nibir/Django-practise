@@ -6,20 +6,17 @@ from first_app import forms
 # Create your views here.
 
 def index(request):
-    diction={'simple_text':'This is a simple text from view'}
+    diction={'title':'Home Page'}
     return render(request,'first_app/index.html',context= diction)
 
-def form(request):
-    new_form = forms.Musician_form()
-    if request.method == 'POST':
-        new_form= forms.Musician_form(request.POST)
+def albam_list(request):
+    diction={'title':'List of Albam'}
+    return render(request,'first_app/albam_list.html',context= diction)
 
-        if new_form.is_valid():
-            new_form.save(commit=True)
-            return index(request)
+def musician_form(request):
+    diction={'title':'Add Musician'}
+    return render(request,'first_app/musician_form.html',context= diction)
 
-    diction={'test_form':new_form,'heading_1':'add new musician'}
-
-
-
-    return render(request,'first_app/form.html',context=diction)
+def albam_form(request):
+    diction={'title':'Add Albam'}
+    return render(request,'first_app/albam_form.html',context= diction)
