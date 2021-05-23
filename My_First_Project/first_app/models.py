@@ -16,6 +16,8 @@ class Albam (models.Model):
     release_date = models.DateField()
     num_stars = models.IntegerField()
 
+
+
     rating= (
     (1,'worst'),
     (2,'bad'),
@@ -26,4 +28,4 @@ class Albam (models.Model):
     num_stars= models.IntegerField(choices=rating)
 
     def __str__(self):
-        return self.name + ", rating: "+ str(self.num_stars) 
+        return self.name + ", rating: "+ str(self.num_stars)
