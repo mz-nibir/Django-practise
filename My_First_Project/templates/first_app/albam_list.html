@@ -17,7 +17,7 @@
   </tr>
   <tr>
     {% for albam in albam_list %}
-    <td>{{albam.name}}</td>
+    <td> <a href="{% url 'First_app:edit_albam' albam_id=albam.id %}"> {{albam.name}} </a></td>
     <td>{{albam.release_date|date:"M, d, Y"}}</td>
     <td>{{albam.num_stars}}</td>
   </tr>

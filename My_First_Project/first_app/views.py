@@ -57,3 +57,16 @@ def edit_artist(request,artist_id):
 
      diction={'edit_form':form,'title':'Edit Artist'}
      return render(request,'first_app/edit_artist.html',context= diction)
+
+def edit_albam(request,albam_id):
+    albam_info=Albam.objects.get(pk=albam_id)
+    form= forms.AlbamForm(instance=albam_info)
+    diction={}
+    if request.method == 'POST':
+        form= forms.AlbamForm(request.POST,instance=albam_info)
+
+        if form.is_valid():
+            form.save(commit=True)
+            diction.update({'success_text':'successfull'})
+    diction.update({'edit_form':form})
+    return render(request,'first_app/edit_albam.html',context=diction)
