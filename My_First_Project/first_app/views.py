@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from first_app.models import Musician,Albam
 from first_app import forms
+from django.db.models import Avg
 
 # Create your views here.
 
@@ -10,8 +11,11 @@ def index(request):
     diction={'title':'Home Page','musician_list':musician_list}
     return render(request,'first_app/index.html',context= diction)
 
-def albam_list(request):
-    diction={'title':'List of Albam'}
+def albam_list(request, artist_id):
+    artist_info= Musician.objects.get(pk=artist_id)
+    albam_list= Albam.objects.filter(artist=artist_id).order_by('name','release_date')
+    artist_rating= Albam.objects.filter(artist=artist_id).aggregate(Avg('num_stars'))
+    diction={'title':'List of Albam','artist_info':artist_info,'albam_list':albam_list,'artist_rating':artist_rating}
     return render(request,'first_app/albam_list.html',context= diction)
 
 def musician_form(request):

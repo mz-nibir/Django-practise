@@ -2,7 +2,24 @@
 {% extends "first_app/base.html" %}
 
 {% block body_block%}
+<h4>Artist Name: {{artist_info.first_name}} {{artist_info.last_name}}</h4>
+<h4>Artist Instrument: {{artist_info.instrument}}</h4>
+<h4>Average Rating: {{artist_rating.num_stars__avg}} </h4>
 
-<h1>This is Albam list Page</h1>
+<h2>List of Album:</h2>
+<table class="table table-bordered">
+  <tr>
+    <th>Albam Name</th>
+    <th>Release Date</th>
+    <th>Rating</th>
+  </tr>
+  <tr>
+    {% for albam in albam_list %}
+    <td>{{albam.name}}</td>
+    <td>{{albam.release_date|date:"M, d, Y"}}</td>
+    <td>{{albam.num_stars}}</td>
+  </tr>
+  {% endfor%}
+</table>
 
 {% endblock %}
