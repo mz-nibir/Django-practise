@@ -43,3 +43,10 @@ def albam_form(request):
 
     diction={'title':'Add Albam','albam_form':form}
     return render(request,'first_app/albam_form.html',context= diction)
+
+def edit_artist(request,artist_id):
+     artist_info=Musician.objects.get(pk=artist_id)
+     form= forms.MusicianForm(instance=artist_info)
+
+     diction={'edit_form':form}
+     return render(request,'first_app/edit_artist.html',context= diction)

@@ -6,6 +6,8 @@
 <h4>Artist Instrument: {{artist_info.instrument}}</h4>
 <h4>Average Rating: {{artist_rating.num_stars__avg}} </h4>
 
+<a href="{% url 'First_app:edit_artist' artist_id=artist_info.id %}" class="btn btn-success btn-sm">Edit</a>
+
 <h2>List of Album:</h2>
 <table class="table table-bordered">
   <tr>
