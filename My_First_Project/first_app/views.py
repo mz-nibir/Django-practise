@@ -69,4 +69,10 @@ def edit_albam(request,albam_id):
             form.save(commit=True)
             diction.update({'success_text':'successfull'})
     diction.update({'edit_form':form})
+    diction.update({'albam_id':albam_id})
     return render(request,'first_app/edit_albam.html',context=diction)
+
+def delete_albam(request,albam_id):
+    albam= Albam.objects.get(pk=albam_id).delete()
+    diction={'delete_success': 'Album Deleted Successfully '}
+    return render(request,'first_app/delete.html',context=diction)
