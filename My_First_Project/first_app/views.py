@@ -76,3 +76,8 @@ def delete_albam(request,albam_id):
     albam= Albam.objects.get(pk=albam_id).delete()
     diction={'delete_success': 'Album Deleted Successfully '}
     return render(request,'first_app/delete.html',context=diction)
+
+def delete_musician(request,artist_id):
+    artist = Musician.objects.get(pk=artist_id).delete()
+    diction={'delete_success': 'Album Deleted Successfully '}
+    return render(request,'first_app/delete.html',context=diction)

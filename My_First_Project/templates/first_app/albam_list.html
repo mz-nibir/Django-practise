@@ -24,4 +24,6 @@
   {% endfor%}
 </table>
 
+<a href="{% url 'First_app:delete_artist' artist_id=artist_info.id %}" class="btn btn-danger" onclick="return confirm('Delete this Musician? ')">Delete</a>
+
 {% endblock %}

@@ -12,6 +12,7 @@ urlpatterns= [
     path('edit_artist/<int:artist_id>/',views.edit_artist,name='edit_artist'),
     path('edit_albam/<int:albam_id>/',views.edit_albam,name='edit_albam'),
     path('delete_albam/<int:albam_id>/',views.delete_albam,name='delete_albam'),
+    path('delete_artist/<int:artist_id>/',views.delete_musician,name='delete_artist'),
 
 
 
