@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-from django.views.generic import View,TemplateView,ListView
+from django.views.generic import View, TemplateView, ListView, DetailView
 from another_app import models
 
 # Create your views here.
@@ -21,3 +20,9 @@ class IndexView(ListView):
         context['sample_text_2']= 'sample text 2'
 
         return context
+
+
+class MusicianDetails(DetailView):
+    context_object_name= 'musician'
+    model = models.Musician
+    template_name = 'another_app/musician_details.html'

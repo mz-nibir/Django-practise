@@ -7,7 +7,7 @@
 
 <ul>
   {% for musician in musician_list %}
-     <li>  {{musician.first_name}} {{musician.last_name}} </li>
+     <li> <a href="{% url 'another_app:musician_details' pk=musician.pk %}">{{musician.first_name}} {{musician.last_name}}</a>  </li>
 
   {% endfor %}
 </ul>
