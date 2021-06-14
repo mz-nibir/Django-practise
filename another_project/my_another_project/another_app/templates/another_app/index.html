@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>i am template from app </h1>
-    <p>{{sample_text_1}}</p>
-    <p>{{sample_text_2}}</p>
+{% extends "another_app/base.html" %}
 
-  </body>
-</html>
+{% block body_block%}
+
+<h1>List of Musician:</h1>
+
+<ul>
+  {% for musician in musician_list %}
+     <li>  {{musician.first_name}} {{musician.last_name}} </li>
+
+  {% endfor %}
+</ul>
+
+{% endblock %}
