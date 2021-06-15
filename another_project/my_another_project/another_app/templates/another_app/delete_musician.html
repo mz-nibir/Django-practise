@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "another_app/base.html" %}
+{% block body_block %}
+
+<h1>Delete {{musician.first_name}} {{musician.last_name}} ???</h1>
+
+<form  method="POST">
+  {% csrf_token %}
+  <input type="submit" name="sumbit" value="delete" class="btn btn-danger btn-sm">   <a href="{% url 'another_app:musician_details' pk=musician.pk %}" class="btn btn-info btn-sm">Cancel</a>
+
+</form>
+
+{% endblock %}
