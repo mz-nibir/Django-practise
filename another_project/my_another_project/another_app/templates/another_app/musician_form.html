@@ -2,8 +2,13 @@
 {% extends "another_app/base.html" %}
 
 {% block body_block%}
+{% if form.instance.pk%}
+<h1>Update Musician</h1>
+{% else %}
 
 <h1>Add Musician:</h1>
+
+{% endif %}
 
 <form method="POST">
 

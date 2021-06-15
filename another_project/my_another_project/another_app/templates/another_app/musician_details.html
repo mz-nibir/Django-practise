@@ -12,8 +12,11 @@
   {% for album in musician.album_list.all %}
   <li>{{album.name}}</li>
 
-</ul>
 {% endfor %}
+</ul>
+
+<a href="{% url 'another_app:musician_update' pk=musician.pk %}" class="btn btn-warning btn-sm">Update</a>
+
 
 
 
